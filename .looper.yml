@@ -1,0 +1,51 @@
+tools:
+  nodejs:
+    - 10.5.0
+  npm:
+    - 6.1.0
+  maven:
+    - 3.3.9
+  sonarscanner:
+    - 3.0.3.778
+
+triggers:
+  - push:
+      ignoreCommitter: jenkinspan
+  - manual:
+      name: Build and Publish
+      call: build_and_Publish
+
+flows:
+  default:
+    - call: build_and_Publish
+
+  build_and_Publish:
+    try:
+      - call: patch_version
+      - call: prechecks
+      - call: run-sonar-analysis
+      - call: publish-package
+    finally:
+      - call: publish-to-hygieia
+
+  pr:
+    - call: prechecks
+
+  prechecks:
+    - npm i
+    - npm run validate
+
+  patch_version:
+    - shell: |
+        npm version minor
+        git push --set-upstream origin ${Branch}
+  run-sonar-analysis:
+    - sonar("Sonar"):
+      - (name sonar) sonar-scanner -Dproject.settings=sonar-project.properties
+      - hygieia.publishSonar()
+
+  publish-package:
+    - (name Publish) npm publish
+
+  publish-to-hygieia:
+    - (name Publish to Hygieia) hygieia.publishBuild()
