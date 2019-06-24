@@ -1,4 +1,4 @@
-package com.gifmodule;
+package com.gifreceiveasdamaged;
 
 import android.app.Application;
 

@@ -1,8 +1,10 @@
 {
-  "name": "gifmodule",
+  "name": "gifreceiveasdamaged",
   "version": "0.0.1",
+  "main": "src/index.js",
   "private": true,
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@gif/gifcomponents": "^0.49.0",
     "@gif/gifuicommon": "^2.10.1",
     "axios": "^0.18.0",
@@ -15,9 +17,7 @@
     "react-redux": "5.0.7",
     "redux": "4.0.0",
     "redux-immutable-state-invariant": "2.1.0",
-    "redux-thunk": "2.3.0"
-  },
-  "devDependencies": {
+    "redux-thunk": "2.3.0",
     "@babel/core": "7.4.0",
     "@babel/runtime": "7.4.2",
     "babel-jest": "24.6.0",
@@ -40,12 +40,12 @@
       "node_modules"
     ],
     "moduleNameMapper": {
-      "^Common(.*)$": "<rootDir>/gifmodule/gifmodulecommon$1",
-      "^Mobile(.*)$": "<rootDir>/gifmodule/gifmodulemobile$1"
+      "^Common(.*)$": "<rootDir>/src/gifreceiveasdamagedcommon$1",
+      "^Mobile(.*)$": "<rootDir>/src/gifreceiveasdamagedmobile$1"
     },
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/gifmodule/**.{js,jsx}"
+      "**/src/**.{js,jsx}"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
@@ -62,7 +62,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "clean": "watchman watch-del-all && react-native start --reset-cache",
-    "lint": "eslint gifprelabel",
+    "lint": "eslint src",
     "validate": "npm run lint && npm run test",
     "snapshot": "npm publish"
   },
