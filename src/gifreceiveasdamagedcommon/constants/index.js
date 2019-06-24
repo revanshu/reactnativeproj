@@ -1,4 +1,4 @@
 // user init
-export const userState = {
-};
+export const userState = {};
 
+export default {};

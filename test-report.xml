@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unitTest version="1">
+  <file path="/Users/r0p00fc/Documents/workspace/recieve-as-damaged/gifreceiveasdamaged/__tests__/index.spec.js">
+    <testCase name="Button Rendering should match to snapshot" duration="2866"/>
+  </file>
+</unitTest>

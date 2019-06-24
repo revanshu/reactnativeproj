@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Rendering should match to snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dispatch": [MockFunction],
+      "openDrawer": [MockFunction],
+    }
+  }
+>
+  <Provider
+    store={
+      Object {
+        "@@observable": [Function],
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  >
+    <NavigationContainer />
+  </Provider>
+</ContextProvider>
+`;

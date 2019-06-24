@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
 
-class Module extends Component {
-  render() {
-    return (
-      <View>
-        <Text>Module</Text>
-      </View>
-    );
-  }
-}
+const Module = () => (
+  <View>
+    <Text>Module</Text>
+  </View>
+);
 
 export default Module;

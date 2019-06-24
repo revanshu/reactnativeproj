@@ -1,5 +1,5 @@
-import { reducers } from './reducers';
+import reducers from './reducers';
 
-export {
-  reducers
-}
+export default {
+  reducers,
+};
