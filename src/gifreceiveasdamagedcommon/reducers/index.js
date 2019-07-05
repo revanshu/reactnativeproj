@@ -2,13 +2,22 @@ import { combineReducers } from 'redux';
 
 import userReducer from './userReducer';
 import scannedDataReducer from './scannedDataReducer';
+import asnDetailReducer from './asnDetailsReducer';
+import defaultPrinterReducer from './defaultPrinterReducer';
+import savedPrinterReducer from './savedPrinterReducer';
+import printerReducer from './printerReducer';
 
-const reducers = (state = {}) => state;
+const reducers = combineReducers({
+  asnDetail: asnDetailReducer,
+  defaultPrinter: defaultPrinterReducer,
+  savedPrinter: savedPrinterReducer,
+});
 
 const moduleCombinedReducer = combineReducers({
-  module: reducers,
+  receiveasdamaged: reducers,
   user: userReducer,
   scannedData: scannedDataReducer,
+  printer: printerReducer,
 });
 
 export default moduleCombinedReducer;
