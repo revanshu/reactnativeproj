@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { FlatButton } from './FlatButton';
+import FlatButton from './FlatButton';
 
 const styles = StyleSheet.create({
   buttonTextStyle: {

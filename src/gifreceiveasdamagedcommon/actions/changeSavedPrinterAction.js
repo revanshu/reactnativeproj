@@ -1,4 +1,3 @@
-import { capabilitiesLoader, httpService, gifLogger } from '@gif/gifuicommon';
 import * as types from './types';
 
 // const changeSavedPrinter = printerType => ({ type: 'PRINTER_CHANGE', payload: printerType });

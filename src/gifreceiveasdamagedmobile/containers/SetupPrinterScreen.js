@@ -133,10 +133,15 @@ class LandingScreen extends Component {
 
   onPrinterSelect = () => {
     this.setState({ selectedPrinterType: 'laser' });
+    this.input.focus();
   };
 
   onInputSelect = () => {
     this.setState({ selectedPrinterType: 'mobile' });
+  };
+
+  inputRef = (ref) => {
+    this.input = ref;
   };
 
   render() {
@@ -146,6 +151,7 @@ class LandingScreen extends Component {
       <View style={styles.parentContainer}>
         <View style={styles.container}>
           <TextInput
+            ref={this.inputRef}
             style={styles.textInput}
             onChangeText={text => this.setState({ text, selectedPrinterType: 'mobile' })}
             value={text}

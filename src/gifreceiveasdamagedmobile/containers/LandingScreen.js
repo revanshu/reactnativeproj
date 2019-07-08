@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  View, Text, StyleSheet, Alert, Modal, TextInput, TouchableHighlight,
+  View,
+  Text,
+  StyleSheet,
+  Alert,
+  Modal,
+  TextInput,
+  TouchableHighlight,
+  Button,
 } from 'react-native';
 import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -189,6 +196,12 @@ class LandingScreen extends Component {
         <View style={styles.container}>
           <Icon name="broken-image" style={styles.iconStyle} size={200} color="#dddddd" />
         </View>
+        <Button
+          onPress={() => {
+            this.navigateToSetupPrinterScreen();
+          }}
+          title="Navigate"
+        />
       </View>
     );
   }

@@ -4,7 +4,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { eventEmitter } from './gifreceiveasdamagedmobile/utils/eventEmitterAPI';
+import eventEmitter from './gifreceiveasdamagedmobile/utils/eventEmitterAPI';
 
 import StackNavigator from './gifreceiveasdamagedmobile';
 import NavigationContextProvider from './gifreceiveasdamagedmobile/utils/NavigationContextProvider';
@@ -33,19 +33,19 @@ class Module extends Component {
     super(props);
     const { userInfo } = props.navigation.state.params;
     store.dispatch({ type: 'ADD_USER_DATA', payload: userInfo });
-    this.printerSubscribe = eventEmitter.on('printerMacAddress', (data) => {
-      store.dispatch(actions.setMacAddress(data));
-    });
-    this.subscribe = eventEmitter.on('scanner', (data) => {
-      store.dispatch({ type: 'ADD_SCANNED_DATA', payload: data });
-    });
+    // this.printerSubscribe = eventEmitter.on('printerMacAddress', (data) => {
+    //   store.dispatch(actions.setMacAddress(data));
+    // });
+    // this.subscribe = eventEmitter.on('scanner', (data) => {
+    //   store.dispatch({ type: 'ADD_SCANNED_DATA', payload: data });
+    // });
     store.dispatch(actions.setMacAddress(props.navigation.state.params.macAddress));
     // initializeLanguage();
   }
 
   componentWillUnmount() {
-    this.subscribe();
-    this.printerSubscribe();
+    // this.subscribe();
+    // this.printerSubscribe();
   }
 
   render() {
